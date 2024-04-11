@@ -20,6 +20,7 @@ import Sizes from './modules/sizes';
 import Snapshots from './modules/snapshots';
 import Tags from './modules/tags';
 import Volumes from './modules/volumes';
+import Vpcs from './modules/vpcs';
 
 export default class DigitalOcean {
     public account: Account;
@@ -42,6 +43,7 @@ export default class DigitalOcean {
     public snapshots: Snapshots;
     public tags: Tags;
     public volumes: Volumes;
+    public vpcs: Vpcs;
 
     constructor(token: string, pageSize: number = 10) {
         const requestHelper = new RequestHelper(token);
@@ -65,5 +67,6 @@ export default class DigitalOcean {
         this.snapshots = new Snapshots(pageSize, requestHelper);
         this.tags = new Tags(pageSize, requestHelper);
         this.volumes = new Volumes(pageSize, requestHelper);
+        this.vpcs = new Vpcs(pageSize, requestHelper);
     }
 }

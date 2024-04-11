@@ -1,6 +1,6 @@
 import RequestHelper from "../request-helper";
 import { BaseModule } from "./base-module";
-import { createVpcRequest, updateVpcRequest} from "../types/vpc";
+import { createVpcRequest, updateVpcRequest} from "../types/vpcs";
 import { HttpMethods } from "../common";
 
 export default class Vpc extends BaseModule {
