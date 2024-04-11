@@ -24,6 +24,10 @@ export class BaseModule {
     }
 
     protected _execute(options: any): Promise<any> {
-        return this.requestHelper.request(options);
+        return this.requestHelper.request({
+            ...options,
+            // Remove trailing slashes from the actionPath
+            actionPath: options.actionPath.replace(/\/$/, ''),
+        });
     }
 }

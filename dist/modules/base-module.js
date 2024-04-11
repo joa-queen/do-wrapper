@@ -26,7 +26,9 @@ var BaseModule = /** @class */ (function () {
         };
     };
     BaseModule.prototype._execute = function (options) {
-        return this.requestHelper.request(options);
+        return this.requestHelper.request(__assign(__assign({}, options), { 
+            // Remove trailing slashes from the actionPath
+            actionPath: options.actionPath.replace(/\/$/, '') }));
     };
     return BaseModule;
 }());
