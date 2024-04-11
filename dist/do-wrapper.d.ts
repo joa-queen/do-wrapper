@@ -18,6 +18,7 @@ import Sizes from './modules/sizes';
 import Snapshots from './modules/snapshots';
 import Tags from './modules/tags';
 import Volumes from './modules/volumes';
+import Vpcs from './modules/vpcs';
 export default class DigitalOcean {
     account: Account;
     actions: Actions;
@@ -39,5 +40,6 @@ export default class DigitalOcean {
     snapshots: Snapshots;
     tags: Tags;
     volumes: Volumes;
+    vpcs: Vpcs;
     constructor(token: string, pageSize?: number);
 }

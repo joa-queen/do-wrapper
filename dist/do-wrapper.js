@@ -24,6 +24,7 @@ var sizes_1 = __importDefault(require("./modules/sizes"));
 var snapshots_1 = __importDefault(require("./modules/snapshots"));
 var tags_1 = __importDefault(require("./modules/tags"));
 var volumes_1 = __importDefault(require("./modules/volumes"));
+var vpcs_1 = __importDefault(require("./modules/vpcs"));
 var DigitalOcean = /** @class */ (function () {
     function DigitalOcean(token, pageSize) {
         if (pageSize === void 0) { pageSize = 10; }
@@ -48,6 +49,7 @@ var DigitalOcean = /** @class */ (function () {
         this.snapshots = new snapshots_1.default(pageSize, requestHelper);
         this.tags = new tags_1.default(pageSize, requestHelper);
         this.volumes = new volumes_1.default(pageSize, requestHelper);
+        this.vpcs = new vpcs_1.default(pageSize, requestHelper);
     }
     return DigitalOcean;
 }());
