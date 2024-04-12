@@ -1,6 +1,6 @@
 import RequestHelper from "../request-helper";
 import { BaseModule } from "./base-module";
-import { DropletCreationRequest } from "../types/droplets";
+import { DropletCreationManyRequest, DropletCreationRequest } from "../types/droplets";
 import { HttpMethods } from "../common";
 
 export default class Droplets extends BaseModule {
@@ -129,6 +129,14 @@ export default class Droplets extends BaseModule {
      * @returns Promise
      */
     public create(options: DropletCreationRequest): Promise<any> {
+        return this._execute({
+            ...this.baseOptions,
+            method: HttpMethods.POST,
+            body: options,
+        });
+    }
+
+    public createMany(options: DropletCreationManyRequest): Promise<any> {
         return this._execute({
             ...this.baseOptions,
             method: HttpMethods.POST,
