@@ -97,6 +97,17 @@ var Projects = /** @class */ (function (_super) {
         });
     };
     /**
+     * Delete a Project
+     * @param projectId the identifier of the Project
+     * @returns Promise
+     */
+    Projects.prototype.delete = function (projectId) {
+        return this._execute({
+            actionPath: this.basePath + "/" + projectId,
+            method: common_1.HttpMethods.DELETE,
+        });
+    };
+    /**
      * Get the resources for a Project using its identifier
      * @param projectId the identifier of the Project
      * @returns Promise

@@ -40,6 +40,12 @@ export default class Projects extends BaseModule {
      */
     patch(projectId: string, projectOptions: UpdateProjectOptions): Promise<any>;
     /**
+     * Delete a Project
+     * @param projectId the identifier of the Project
+     * @returns Promise
+     */
+    delete(projectId: string): Promise<any>;
+    /**
      * Get the resources for a Project using its identifier
      * @param projectId the identifier of the Project
      * @returns Promise

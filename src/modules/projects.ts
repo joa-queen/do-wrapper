@@ -86,6 +86,18 @@ export default class Projects extends BaseModule {
     }
 
     /**
+     * Delete a Project
+     * @param projectId the identifier of the Project
+     * @returns Promise
+     */
+    public delete(projectId: string): Promise<any> {
+        return this._execute({
+            actionPath: `${this.basePath}/${projectId}`,
+            method: HttpMethods.DELETE,
+        });
+    }
+
+    /**
      * Get the resources for a Project using its identifier
      * @param projectId the identifier of the Project
      * @returns Promise
