@@ -12,3 +12,18 @@ export interface DropletCreationRequest {
     volumes: string[];
     tags: string[];
 }
+
+export interface DropletCreationManyRequest {
+    names: string[];
+    region: string;
+    size: string;
+    image: string;
+    ssh_keys?: (number | string)[];
+    backups?: boolean;
+    ipv6?: boolean,
+    user_data?: string;
+    monitoring?: boolean;
+    volumes?: string[];
+    tags?: string[];
+    vpc_uuid?: string;
+}

@@ -1,6 +1,6 @@
 import RequestHelper from "../request-helper";
 import { BaseModule } from "./base-module";
-import { DropletCreationRequest } from "../types/droplets";
+import { DropletCreationManyRequest, DropletCreationRequest } from "../types/droplets";
 export default class Droplets extends BaseModule {
     private basePath;
     private baseOptions;
@@ -60,6 +60,7 @@ export default class Droplets extends BaseModule {
      * @returns Promise
      */
     create(options: DropletCreationRequest): Promise<any>;
+    createMany(options: DropletCreationManyRequest): Promise<any>;
     /**
      * Get a Droplet by its identifier
      * @param dropletId the identifier of the Droplet

@@ -153,6 +153,9 @@ var Droplets = /** @class */ (function (_super) {
     Droplets.prototype.create = function (options) {
         return this._execute(__assign(__assign({}, this.baseOptions), { method: common_1.HttpMethods.POST, body: options }));
     };
+    Droplets.prototype.createMany = function (options) {
+        return this._execute(__assign(__assign({}, this.baseOptions), { method: common_1.HttpMethods.POST, body: options }));
+    };
     /**
      * Get a Droplet by its identifier
      * @param dropletId the identifier of the Droplet
