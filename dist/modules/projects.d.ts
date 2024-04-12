@@ -1,6 +1,6 @@
 import RequestHelper from "../request-helper";
 import { BaseModule } from "./base-module";
-import { CreateProjectOptions, UpdateProjectOptions } from "../types/projects";
+import { CreateProjectOptions, UpdateProjectOptions, DeleteProjectOptions } from "../types/projects";
 export default class Projects extends BaseModule {
     private basePath;
     private baseOptions;
@@ -44,7 +44,7 @@ export default class Projects extends BaseModule {
      * @param projectId the identifier of the Project
      * @returns Promise
      */
-    delete(projectId: string): Promise<any>;
+    delete(projectId: string, projectOptions: DeleteProjectOptions): Promise<any>;
     /**
      * Get the resources for a Project using its identifier
      * @param projectId the identifier of the Project

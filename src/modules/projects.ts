@@ -1,6 +1,6 @@
 import RequestHelper from "../request-helper";
 import { BaseModule } from "./base-module";
-import { CreateProjectOptions, UpdateProjectOptions } from "../types/projects";
+import { CreateProjectOptions, UpdateProjectOptions, DeleteProjectOptions } from "../types/projects";
 import { HttpMethods } from "../common";
 
 export default class Projects extends BaseModule {
@@ -90,10 +90,11 @@ export default class Projects extends BaseModule {
      * @param projectId the identifier of the Project
      * @returns Promise
      */
-    public delete(projectId: string): Promise<any> {
+    public delete(projectId: string, projectOptions: DeleteProjectOptions): Promise<any> {
         return this._execute({
             actionPath: `${this.basePath}/${projectId}`,
             method: HttpMethods.DELETE,
+            body: projectOptions,
         });
     }
 

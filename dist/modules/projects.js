@@ -101,10 +101,11 @@ var Projects = /** @class */ (function (_super) {
      * @param projectId the identifier of the Project
      * @returns Promise
      */
-    Projects.prototype.delete = function (projectId) {
+    Projects.prototype.delete = function (projectId, projectOptions) {
         return this._execute({
             actionPath: this.basePath + "/" + projectId,
             method: common_1.HttpMethods.DELETE,
+            body: projectOptions,
         });
     };
     /**

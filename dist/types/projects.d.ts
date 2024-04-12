@@ -20,3 +20,7 @@ export interface PatchProjectOptions {
     environment?: string;
     is_default?: boolean;
 }
+
+export interface DeleteProjectOptions {
+    project_id: string;
+}
