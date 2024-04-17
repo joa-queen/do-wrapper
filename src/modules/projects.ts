@@ -77,7 +77,7 @@ export default class Projects extends BaseModule {
      * @param projectOptions the options for the Project
      * @returns Promise
      */
-    public patch(projectId: string, projectOptions: UpdateProjectOptions): Promise<any> {
+    public patch(projectId: string, projectOptions: Partial<UpdateProjectOptions>): Promise<any> {
         return this._execute({
             actionPath: `${this.basePath}/${encodeURIComponent(projectId)}`,
             method: HttpMethods.PATCH,

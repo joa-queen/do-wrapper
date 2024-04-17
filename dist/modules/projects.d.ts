@@ -38,7 +38,7 @@ export default class Projects extends BaseModule {
      * @param projectOptions the options for the Project
      * @returns Promise
      */
-    patch(projectId: string, projectOptions: UpdateProjectOptions): Promise<any>;
+    patch(projectId: string, projectOptions: Partial<UpdateProjectOptions>): Promise<any>;
     /**
      * Delete a Project
      * @param projectId the identifier of the Project
