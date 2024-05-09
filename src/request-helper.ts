@@ -34,7 +34,7 @@ export default class RequestHelper {
         const promise = new Promise((resolve, reject) => {
             callback = (body: any, err: any) => {
                 if (err) {
-                    reject({ err, body });
+                    reject({ err, body: err.response });
                 } else {
                     resolve(body);
                 }
