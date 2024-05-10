@@ -38,8 +38,9 @@ var RequestHelper = /** @class */ (function () {
         var callback;
         var promise = new Promise(function (resolve, reject) {
             callback = function (body, err) {
+                var _a;
                 if (err) {
-                    reject({ err: err, body: err.response });
+                    reject({ err: err, response: (_a = err.response) === null || _a === void 0 ? void 0 : _a.body });
                 }
                 else {
                     resolve(body);
