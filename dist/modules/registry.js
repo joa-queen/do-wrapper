@@ -93,7 +93,7 @@ var Registry = /** @class */ (function (_super) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/repositoriesV2",
             key: 'repositories',
             pageSize: pageSize,
@@ -105,7 +105,7 @@ var Registry = /** @class */ (function (_super) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/repositories/" + repositoryName + "/digests",
             key: 'manifests',
             pageSize: pageSize,
@@ -134,7 +134,7 @@ var Registry = /** @class */ (function (_super) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/garbage-collections",
             key: 'garbage_collections',
             pageSize: pageSize,

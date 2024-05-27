@@ -83,7 +83,7 @@ export default class Registry extends BaseModule {
     }
 
     public getRepositories(registryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/repositoriesV2`,
             key: 'repositories',
             pageSize: pageSize,
@@ -93,7 +93,7 @@ export default class Registry extends BaseModule {
     }
 
     public listRepositoryManifests(registryName: string, repositoryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/repositories/${repositoryName}/digests`,
             key: 'manifests',
             pageSize: pageSize,
@@ -123,7 +123,7 @@ export default class Registry extends BaseModule {
     }
 
     public listGarbageCollections(registryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._execute({
+        return this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/garbage-collections`,
             key: 'garbage_collections',
             pageSize: pageSize,
