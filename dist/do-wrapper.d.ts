@@ -13,6 +13,7 @@ import Kubernetes from './modules/kubernetes';
 import LoadBalancers from './modules/load-balancers';
 import Projects from './modules/projects';
 import Regions from './modules/regions';
+import Registry from './modules/registry';
 import Reports from './modules/reports';
 import Sizes from './modules/sizes';
 import Snapshots from './modules/snapshots';
@@ -35,6 +36,7 @@ export default class DigitalOcean {
     loadBalancers: LoadBalancers;
     projects: Projects;
     regions: Regions;
+    registry: Registry;
     reports: Reports;
     sizes: Sizes;
     snapshots: Snapshots;
