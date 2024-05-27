@@ -93,25 +93,27 @@ var Registry = /** @class */ (function (_super) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._getBasePaginatedRequestOptions({
+        var requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/repositoriesV2",
             key: 'repositories',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     };
     Registry.prototype.listRepositoryManifests = function (registryName, repositoryName, includeAll, page, pageSize) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._getBasePaginatedRequestOptions({
+        var requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/repositories/" + repositoryName + "/digests",
             key: 'manifests',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     };
     Registry.prototype.deleteRepositoryManifest = function (registryName, repositoryName, digest) {
         return this._execute({
@@ -134,13 +136,14 @@ var Registry = /** @class */ (function (_super) {
         if (includeAll === void 0) { includeAll = false; }
         if (page === void 0) { page = 1; }
         if (pageSize === void 0) { pageSize = this.pageSize; }
-        return this._getBasePaginatedRequestOptions({
+        var requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: this.basePath + "/" + registryName + "/garbage-collections",
             key: 'garbage_collections',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     };
     Registry.prototype.cancelGarbageCollection = function (registryName, garbageCollectionId) {
         return this._execute({

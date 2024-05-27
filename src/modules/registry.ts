@@ -83,23 +83,25 @@ export default class Registry extends BaseModule {
     }
 
     public getRepositories(registryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._getBasePaginatedRequestOptions({
+        const requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/repositoriesV2`,
             key: 'repositories',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     }
 
     public listRepositoryManifests(registryName: string, repositoryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._getBasePaginatedRequestOptions({
+        const requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/repositories/${repositoryName}/digests`,
             key: 'manifests',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     }
 
     public deleteRepositoryManifest(registryName: string, repositoryName: string, digest: string): Promise<any> {
@@ -123,13 +125,14 @@ export default class Registry extends BaseModule {
     }
 
     public listGarbageCollections(registryName: string, includeAll: boolean = false, page: number = 1, pageSize: number = this.pageSize): Promise<any> {
-        return this._getBasePaginatedRequestOptions({
+        const requestOptions = this._getBasePaginatedRequestOptions({
             actionPath: `${this.basePath}/${registryName}/garbage-collections`,
             key: 'garbage_collections',
             pageSize: pageSize,
             page: page,
             includeAll: includeAll,
         });
+        return this._execute(requestOptions);
     }
 
     public cancelGarbageCollection(registryName: string, garbageCollectionId: string): Promise<any> {
