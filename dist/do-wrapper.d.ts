@@ -11,6 +11,7 @@ import Images from './modules/images';
 import Keys from './modules/keys';
 import Kubernetes from './modules/kubernetes';
 import LoadBalancers from './modules/load-balancers';
+import Monitoring from './modules/monitoring';
 import Projects from './modules/projects';
 import Regions from './modules/regions';
 import Registry from './modules/registry';
@@ -34,6 +35,7 @@ export default class DigitalOcean {
     keys: Keys;
     kubernetes: Kubernetes;
     loadBalancers: LoadBalancers;
+    monitoring: Monitoring;
     projects: Projects;
     regions: Regions;
     registry: Registry;

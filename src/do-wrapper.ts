@@ -13,6 +13,7 @@ import Images from './modules/images';
 import Keys from './modules/keys';
 import Kubernetes from './modules/kubernetes';
 import LoadBalancers from './modules/load-balancers';
+import Monitoring from './modules/monitoring';
 import Projects from './modules/projects';
 import Regions from './modules/regions';
 import Registry from './modules/registry';
@@ -37,6 +38,7 @@ export default class DigitalOcean {
     public keys: Keys;
     public kubernetes: Kubernetes;
     public loadBalancers: LoadBalancers;
+    public monitoring: Monitoring;
     public projects: Projects;
     public regions: Regions;
     public registry: Registry;
@@ -62,6 +64,7 @@ export default class DigitalOcean {
         this.keys = new Keys(pageSize, requestHelper);
         this.kubernetes = new Kubernetes(pageSize, requestHelper);
         this.loadBalancers = new LoadBalancers(pageSize, requestHelper);
+        this.monitoring = new Monitoring(pageSize, requestHelper);
         this.projects = new Projects(pageSize, requestHelper);
         this.regions = new Regions(pageSize, requestHelper);
         this.registry = new Registry(pageSize, requestHelper);
